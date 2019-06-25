@@ -1,6 +1,6 @@
 // @flow
-import authReducer from './auth/reducer';
+import { reducer } from '@jonbrennecke/react-native-media';
 
 export default {
-  auth: authReducer,
+  media: reducer
 };

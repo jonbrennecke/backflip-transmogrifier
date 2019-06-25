@@ -1,39 +1,44 @@
 // @flow
 import { Navigation } from 'react-native-navigation';
 
-import HomeScreen from './home/HomeScreen';
-import LoginModal from './login/LoginModal';
-import { StorybookUI, isStorybookEnabled } from './storybook';
-import { SCREENS, SCREEN_PARAMS } from '../constants';
+import { MediaExplorer } from './MediaExplorer';
 
 import type { Element } from 'react';
 
-export const registerScreens = (reduxStore: any, ReduxProvider: Element<*>) => {
-  if (isStorybookEnabled()) {
-    Navigation.registerComponent(
-      SCREENS.STORYBOOK_SCREEN,
-      () => StorybookUI,
-    );
-  } else {
-    Navigation.registerComponentWithRedux(
-      SCREENS.HOME_SCREEN,
-      () => HomeScreen,
-      ReduxProvider,
-      reduxStore
-    );
-    Navigation.registerComponentWithRedux(
-      SCREENS.LOGIN_MODAL,
-      () => LoginModal,
-      ReduxProvider,
-      reduxStore
-    );
+export const Screens = {
+  MediaExplorer: 'MediaExplorer'
+};
+
+export const screenConfig: { [key: $Keys<typeof Screens>]: Object } = {
+  [Screens.MediaExplorer]: {
+    component: {
+      name: Screens.MediaExplorer,
+      id: Screens.MediaExplorer,
+      passProps: {},
+      options: {
+        statusBar: {
+          style: 'light',
+        },
+        topBar: {
+          visible: false,
+          animate: false,
+        }
+      },
+    },
   }
-}
+};
+
+export const registerScreens = (reduxStore: any, ReduxProvider: Element<*>) => {
+  Navigation.registerComponentWithRedux(
+    Screens.MediaExplorer,
+    () => MediaExplorer,
+    ReduxProvider,
+    reduxStore
+  );
+};
 
 export const setRoot = () => {
   Navigation.setRoot({
-    root: SCREEN_PARAMS[
-      isStorybookEnabled() ? SCREENS.STORYBOOK_SCREEN : SCREENS.HOME_SCREEN
-    ]
+    root: screenConfig[Screens.MediaExplorer]
   });
 }
