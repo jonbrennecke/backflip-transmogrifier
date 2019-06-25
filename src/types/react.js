@@ -2,7 +2,11 @@
 import StyleSheetPropType from 'react-native/Libraries/StyleSheet/StyleSheetPropType';
 import ViewStylePropTypes from 'react-native/Libraries/Components/View/ViewStylePropTypes';
 
-import type { Element, ChildrenArray, StatelessFunctionalComponent } from 'react';
+import type {
+  Element,
+  ChildrenArray,
+  StatelessFunctionalComponent,
+} from 'react';
 
 export type Children = ChildrenArray<?Element<*>> | string;
 

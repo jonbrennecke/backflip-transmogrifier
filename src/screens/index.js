@@ -1,19 +1,19 @@
 // @flow
 import { Navigation } from 'react-native-navigation';
 
-import { MediaExplorer } from './MediaExplorer';
+import { InitScreen } from './InitScreen';
 
 import type { Element } from 'react';
 
 export const Screens = {
-  MediaExplorer: 'MediaExplorer'
+  InitScreen: 'InitScreen',
 };
 
 export const screenConfig: { [key: $Keys<typeof Screens>]: Object } = {
-  [Screens.MediaExplorer]: {
+  [Screens.InitScreen]: {
     component: {
-      name: Screens.MediaExplorer,
-      id: Screens.MediaExplorer,
+      name: Screens.InitScreen,
+      id: Screens.InitScreen,
       passProps: {},
       options: {
         statusBar: {
@@ -22,16 +22,16 @@ export const screenConfig: { [key: $Keys<typeof Screens>]: Object } = {
         topBar: {
           visible: false,
           animate: false,
-        }
+        },
       },
     },
-  }
+  },
 };
 
 export const registerScreens = (reduxStore: any, ReduxProvider: Element<*>) => {
   Navigation.registerComponentWithRedux(
-    Screens.MediaExplorer,
-    () => MediaExplorer,
+    Screens.InitScreen,
+    () => InitScreen,
     ReduxProvider,
     reduxStore
   );
@@ -39,6 +39,6 @@ export const registerScreens = (reduxStore: any, ReduxProvider: Element<*>) => {
 
 export const setRoot = () => {
   Navigation.setRoot({
-    root: screenConfig[Screens.MediaExplorer]
+    root: screenConfig[Screens.InitScreen],
   });
-}
+};
