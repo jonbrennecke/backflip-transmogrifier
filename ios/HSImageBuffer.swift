@@ -1,9 +1,11 @@
 import CoreGraphics
 
-struct HSImageBuffer {
-  private let pixelBuffer: HSPixelBuffer
+struct HSImageBuffer<T: Numeric> {
+  typealias PixelValueType = T
+  
+  private let pixelBuffer: HSPixelBuffer<T>
 
-  init(pixelBuffer: HSPixelBuffer) {
+  init(pixelBuffer: HSPixelBuffer<T>) {
     self.pixelBuffer = pixelBuffer
   }
 
@@ -11,18 +13,27 @@ struct HSImageBuffer {
     return pixelBuffer.size
   }
 
-  // TODO: this currently only works for grayscale images with Float32 components
   public func makeImage() -> CGImage? {
-    let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.none.rawValue)
-      .union(.floatComponents)
-      .union(.byteOrder32Little)
     return createCGImage(
-      pixelValues: pixelBuffer.getPixels(),
+      pixelValues: pixelBuffer.getBytes(),
       imageSize: size,
       colorSpace: CGColorSpaceCreateDeviceGray(),
       bitmapInfo: bitmapInfo,
-      bytesPerPixel: MemoryLayout<Float32>.size,
-      bitsPerComponent: MemoryLayout<Float32>.size * 8
+      bytesPerPixel: MemoryLayout<T>.size,
+      bitsPerComponent: MemoryLayout<T>.size * 8
     )
+  }
+  
+  private var bitmapInfo: CGBitmapInfo {
+    switch MemoryLayout<T>.size {
+    case 4:
+      return CGBitmapInfo(rawValue: CGImageAlphaInfo.none.rawValue)
+        .union(.floatComponents)
+        .union(.byteOrder32Little)
+    case 1:
+      fallthrough
+    default:
+      return CGBitmapInfo(rawValue: CGImageAlphaInfo.none.rawValue)
+    }
   }
 }

@@ -23,16 +23,26 @@ class HSTrainingPipeline: NSObject {
       guard let depthData = try createDepthData(withImageData: data) else {
         return
       }
-      let buffer = HSPixelBuffer(pixelBuffer: depthData.depthDataMap)
-//      let depthPixels: [UInt8] = buffer.mapPixels(repeating: 0) { pixel -> UInt8 in
-//        return transformDepth(for: pixel)
-//      }
-//      let outputBuffer = createBuffer(with: depthPixels, size: buffer.size, pixelFormat: kCVPixelFormatType_OneComponent8)
-//      let image = createImage(withPixelBuffer: outputBuffer)
+      
+      let buffer = HSPixelBuffer<Float32>(pixelBuffer: depthData.depthDataMap)
+      let rawDepthPixels: [Float32] = buffer.getPixels(repeating: 0)
+      let maxDepth = rawDepthPixels.max() ?? Float32.greatestFiniteMagnitude
+      let minDepth = rawDepthPixels.min() ?? Float32.leastNonzeroMagnitude
+      
+      var depthPixels: [Float32] = buffer.mapPixels(repeating: 0) { pixel -> Float32 in
+        return transform(depth: pixel, min: minDepth, max: maxDepth)
+      }
+      
+      guard let outputBuffer = createBuffer(
+        with: &depthPixels,
+        size: buffer.size,
+        bufferType: .depthFloat32
+      ) else {
+        return
+      }
 
-//      createPixelBuffer(with: depthPixels)
-
-      let imageBuffer = HSImageBuffer(pixelBuffer: buffer)
+      let imageBuffer = HSImageBuffer(pixelBuffer: HSPixelBuffer<Float32>(pixelBuffer: outputBuffer))
+//      let imageBuffer = HSImageBuffer(pixelBuffer: buffer)
       guard let outputCGImage = imageBuffer.makeImage() else {
         return
       }
@@ -46,10 +56,17 @@ class HSTrainingPipeline: NSObject {
   }
 }
 
-// TODO:
-fileprivate func transformDepth(for depthValue: Float32) -> UInt8 {
-  return UInt8(exactly: depthValue.rounded())!
-//  if depthValue.isNaN {
+fileprivate func depthToUInt8(
+  depth: Float32, min minDepth: Float32, max maxDepth: Float32
+  ) -> UInt8 {
+  let normalizedDepth = normalize(depth, min: minDepth, max: maxDepth)
+  return UInt8(exactly: (normalizedDepth * 255).rounded())!
+}
+
+fileprivate func transform(
+  depth: Float32, min minDepth: Float32, max maxDepth: Float32
+) -> Float32 {
+  if depth.isNaN {
 //    // handle unknown values; this is due to the distance between the infrared sensor and receiver
 //    for i in stride(from: x, to: x - 25, by: -1) {
 //      let depthValue = depthAtIndex(i, y)
@@ -66,10 +83,8 @@ fileprivate func transformDepth(for depthValue: Float32) -> UInt8 {
 //      setPixel(x, y, depthPixelValue)
 //      return
 //    }
-//
-//    setPixel(x, y, 0)
-//    return
-//  }
+    return 0
+  }
 //  let depth = normalize(depthValue, min: minDepth, max: maxDepth)
 //  if depth < regionRange.lowerBound {
 //    setPixel(x, y, 0)
@@ -82,4 +97,5 @@ fileprivate func transformDepth(for depthValue: Float32) -> UInt8 {
 //  let adjustedDepth = normalize(depth, min: regionRange.lowerBound, max: regionRange.upperBound)
 //  let depthPixelValue = UInt8(adjustedDepth * 255)
 //  setPixel(x, y, depthPixelValue)
+  return depth
 }

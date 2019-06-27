@@ -58,6 +58,7 @@
 		FCEDBA6722C31D3F008FD805 /* pixelBufferUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA6622C31D3F008FD805 /* pixelBufferUtils.swift */; };
 		FCEDBA6922C4302B008FD805 /* depthUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA6822C4302B008FD805 /* depthUtils.swift */; };
 		FCEDBA6B22C458CB008FD805 /* HSImageBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA6A22C458CB008FD805 /* HSImageBuffer.swift */; };
+		FCEDBA6D22C49A4A008FD805 /* mathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA6C22C49A4A008FD805 /* mathUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -465,6 +466,7 @@
 		FCEDBA6622C31D3F008FD805 /* pixelBufferUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pixelBufferUtils.swift; sourceTree = "<group>"; };
 		FCEDBA6822C4302B008FD805 /* depthUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = depthUtils.swift; sourceTree = "<group>"; };
 		FCEDBA6A22C458CB008FD805 /* HSImageBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSImageBuffer.swift; sourceTree = "<group>"; };
+		FCEDBA6C22C49A4A008FD805 /* mathUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mathUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -830,6 +832,7 @@
 				FCEDBA6822C4302B008FD805 /* depthUtils.swift */,
 				FCEDBA6422C31D18008FD805 /* HSPixelBuffer.swift */,
 				FCEDBA6A22C458CB008FD805 /* HSImageBuffer.swift */,
+				FCEDBA6C22C49A4A008FD805 /* mathUtils.swift */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -1457,6 +1460,7 @@
 				FCEDBA4922C304DB008FD805 /* Size.swift in Sources */,
 				FCEDBA4722C304C2008FD805 /* createCGImage.swift in Sources */,
 				FCEDBA6722C31D3F008FD805 /* pixelBufferUtils.swift in Sources */,
+				FCEDBA6D22C49A4A008FD805 /* mathUtils.swift in Sources */,
 				FC50027F22C1F0E10031F724 /* Empty.swift in Sources */,
 				FCEDBA2C22C2B951008FD805 /* HSAsyncImageDataIterator.swift in Sources */,
 			);

@@ -40,8 +40,6 @@ internal func createCGImage<T>(
 internal func createCGDataProvider<T>(
   pixelValues: [T],
   imageSize: Size<Int>,
-  colorSpace _: CGColorSpace,
-  bitmapInfo _: CGBitmapInfo,
   bytesPerPixel: Int = MemoryLayout<UInt8>.size
 ) -> CGDataProvider? {
   let bytesPerRow = bytesPerPixel * imageSize.width
