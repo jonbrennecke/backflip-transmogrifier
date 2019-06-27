@@ -20,9 +20,20 @@ class HSTrainingPipeline: NSObject {
     let images = HSAsyncImageDataIterator(assetIDs: request.assetIDs)
     try images.forEach { promise in
       let data = try promise.wait()
-      guard let depthData = try createDepthData(withImageData: data) else {
+      guard let depthData = try createDepthData(with: data) else {
         return
       }
+      
+      guard let image = createImage(with: data) else {
+        return
+      }
+      
+      // convert to UIImage and save to Photos
+      let colorImage = UIImage(cgImage: image)
+      try PHPhotoLibrary.shared().performChangesAndWait {
+        PHAssetChangeRequest.creationRequestForAsset(from: colorImage)
+      }
+      
       
       let buffer = HSPixelBuffer<Float32>(pixelBuffer: depthData.depthDataMap)
       let rawDepthPixels: [Float32] = buffer.getPixels(repeating: 0)

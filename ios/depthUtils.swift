@@ -1,7 +1,7 @@
 import AVFoundation
 
 @available(iOS 11.0, *)
-internal func createDepthData(withImageData data: Data) throws -> AVDepthData? {
+internal func createDepthData(with data: Data) throws -> AVDepthData? {
   guard
     let imageSource = CGImageSourceCreateWithData(data as CFData, nil),
     case .statusComplete = CGImageSourceGetStatus(imageSource),

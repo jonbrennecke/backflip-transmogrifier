@@ -1,4 +1,5 @@
 import CoreGraphics
+import AVFoundation
 
 internal func createCGImage<T>(
   pixelValues: [T],
@@ -36,20 +37,13 @@ internal func createCGImage<T>(
   }
 }
 
-// TODO:
-internal func createCGDataProvider<T>(
-  pixelValues: [T],
-  imageSize: Size<Int>,
-  bytesPerPixel: Int = MemoryLayout<UInt8>.size
-) -> CGDataProvider? {
-  let bytesPerRow = bytesPerPixel * imageSize.width
-  let totalBytes = imageSize.height * bytesPerRow
-  var pixelValues = pixelValues
-  return withUnsafePointer(to: &pixelValues) { ptr -> CGDataProvider? in
-    let data = UnsafeRawPointer(ptr.pointee).assumingMemoryBound(to: T.self)
-    let releaseData: CGDataProviderReleaseDataCallback = {
-      (_: UnsafeMutableRawPointer?, _: UnsafeRawPointer, _: Int) -> Void in
-    }
-    return CGDataProvider(dataInfo: nil, data: data, size: totalBytes, releaseData: releaseData)
+internal func createImage(with data: Data) -> CGImage? {
+  guard
+    let imageSource = CGImageSourceCreateWithData(data as CFData, nil),
+    case .statusComplete = CGImageSourceGetStatus(imageSource),
+    CGImageSourceGetCount(imageSource) > 0
+    else {
+      return nil
   }
+  return CGImageSourceCreateImageAtIndex(imageSource, 0, nil)
 }
