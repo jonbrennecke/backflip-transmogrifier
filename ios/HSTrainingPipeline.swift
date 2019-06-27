@@ -17,6 +17,7 @@ class HSTrainingPipeline: NSObject {
     if request.assetIDs.count == 0 {
       return
     }
+    
     let images = HSAsyncImageDataIterator(assetIDs: request.assetIDs)
     try images.forEach { promise in
       let data = try promise.wait()
@@ -25,28 +26,39 @@ class HSTrainingPipeline: NSObject {
         return
       }
       
-      let buffer = HSPixelBuffer<UInt8>(pixelBuffer: imageData.segmentationMatte.mattingImage)
-      let imageBuffer = HSImageBuffer(pixelBuffer: buffer)
+      // Generate and save segmentation matte as an image
+      let matteImageBuffer = HSImageBuffer(pixelBuffer: imageData.segmentationMatteBuffer)
+      if let matteCGImage = matteImageBuffer.makeImage() {
+        let image = UIImage(cgImage: matteCGImage)
+        try PHPhotoLibrary.shared().performChangesAndWait {
+          PHAssetChangeRequest.creationRequestForAsset(from: image)
+        }
+      }
       
-//      if let image = CIImage(portaitEffectsMatte: imageData.segmentationMatte) {
-//        let debugImage = UIImage(ciImage: image)
-//        try PHPhotoLibrary.shared().performChangesAndWait {
-//          PHAssetChangeRequest.creationRequestForAsset(from: debugImage)
-//          UIImageWriteToSavedPhotosAlbum(debugImage, nil, nil, nil)
-//        }
-//      }
+      // Generate and save depth data as an image
+      let depthImageBuffer = HSImageBuffer(pixelBuffer: imageData.depthBuffer)
+      if let depthCGImage = depthImageBuffer.makeImage() {
+        let image = UIImage(cgImage: depthCGImage)
+        try PHPhotoLibrary.shared().performChangesAndWait {
+          PHAssetChangeRequest.creationRequestForAsset(from: image)
+        }
+      }
+      
+      // save original image
+      let image = UIImage(cgImage: imageData.image)
+      try PHPhotoLibrary.shared().performChangesAndWait {
+        PHAssetChangeRequest.creationRequestForAsset(from: image)
+      }
+
       
 //      let buffer = imageData.depthBuffer
-      
 //      guard let faceRect = imageData.faceRectangle else {
 //        return
 //      }
 //      let rect = image.toDepthCoords(from: faceRect)
 //      let facePixels = buffer.getPixels(in: rect)
 //      let averageOfFace = facePixels.reduce(0, +) / Float(facePixels.count)
-      
 //      var depthPixels: [Float32] = buffer.getPixels()
-//
 //      guard let outputBuffer = createBuffer(
 //        with: &depthPixels,
 //        size: buffer.size,
@@ -54,17 +66,7 @@ class HSTrainingPipeline: NSObject {
 //      ) else {
 //        return
 //      }
-//
 //      let imageBuffer = HSImageBuffer(pixelBuffer: HSPixelBuffer<Float32>(pixelBuffer: outputBuffer))
-      guard let outputCGImage = imageBuffer.makeImage() else {
-        return
-      }
-
-      // convert to UIImage and save to Photos
-      let debugImage = UIImage(cgImage: outputCGImage)
-      try PHPhotoLibrary.shared().performChangesAndWait {
-        PHAssetChangeRequest.creationRequestForAsset(from: debugImage)
-      }
     }
   }
 }

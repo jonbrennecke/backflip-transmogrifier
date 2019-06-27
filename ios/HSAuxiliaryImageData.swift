@@ -2,27 +2,35 @@ import AVFoundation
 import CoreImage
 
 @available(iOS 12.0, *)
-struct HSAuxiliaryImageData {
-  private let image: CIImage
+class HSAuxiliaryImageData {
+  public let image: CGImage
   
-  // TODO: should be private
-  public let segmentationMatte: AVPortraitEffectsMatte
+  public lazy var ciImage: CIImage = {
+    return CIImage(cgImage: image)
+  }()
   
-  // TODO: should be private
-  public let depthBuffer: HSPixelBuffer<Float32>
+  private let segmentationMatte: AVPortraitEffectsMatte
+  public lazy var segmentationMatteBuffer: HSPixelBuffer<UInt8> = {
+    return HSPixelBuffer<UInt8>(pixelBuffer: segmentationMatte.mattingImage)
+  }()
+  
+  private let depthData: AVDepthData
+  public lazy var depthBuffer: HSPixelBuffer<Float32> = {
+    return HSPixelBuffer<Float32>(pixelBuffer: depthData.depthDataMap)
+  }()
   
   init?(data: Data) {
     guard
       let imageSource = createImageSource(with: data),
       let depthData = createDepthData(with: imageSource),
       let matte = createSegmentationMatte(with: imageSource),
-      let cgImage = createImage(with: imageSource)
+      let image = createImage(with: imageSource)
     else {
       return nil
     }
     self.segmentationMatte = matte
-    self.depthBuffer = HSPixelBuffer<Float32>(pixelBuffer: depthData.depthDataMap)
-    self.image = CIImage(cgImage: cgImage)
+    self.depthData = depthData
+    self.image = image
   }
   
   public lazy var face: CIFaceFeature? = {
@@ -30,7 +38,7 @@ struct HSAuxiliaryImageData {
     guard let faceDetector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: options) else {
       return nil
     }
-    let faces = faceDetector.features(in: image)
+    let faces = faceDetector.features(in: ciImage)
     return faces.first as? CIFaceFeature
   }()
   
@@ -48,10 +56,7 @@ struct HSAuxiliaryImageData {
   }()
   
   public var imageSize: Size<Int> {
-    guard let cgImage = image.cgImage else {
-      fatalError("image.cgImage should exist since this CIImage is always created from a CGImage")
-    }
-    return Size(width: cgImage.width, height: cgImage.height)
+    return Size(width: image.width, height: image.height)
   }
   
   public var depthSize: Size<Int> {

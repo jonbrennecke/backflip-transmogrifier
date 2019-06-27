@@ -61,6 +61,7 @@
 		FCEDBA6D22C49A4A008FD805 /* mathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA6C22C49A4A008FD805 /* mathUtils.swift */; };
 		FCEDBA6F22C52C20008FD805 /* HSAuxiliaryImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA6E22C52C20008FD805 /* HSAuxiliaryImageData.swift */; };
 		FCEDBA7122C53D83008FD805 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA7022C53D83008FD805 /* Rectangle.swift */; };
+		FCEDBA7322C585E7008FD805 /* CoreML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCEDBA7222C585E7008FD805 /* CoreML.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -471,6 +472,7 @@
 		FCEDBA6C22C49A4A008FD805 /* mathUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mathUtils.swift; sourceTree = "<group>"; };
 		FCEDBA6E22C52C20008FD805 /* HSAuxiliaryImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSAuxiliaryImageData.swift; sourceTree = "<group>"; };
 		FCEDBA7022C53D83008FD805 /* Rectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
+		FCEDBA7222C585E7008FD805 /* CoreML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreML.framework; path = System/Library/Frameworks/CoreML.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -486,6 +488,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCEDBA7322C585E7008FD805 /* CoreML.framework in Frameworks */,
 				FCEDBA4222C2C203008FD805 /* PromiseKit.framework in Frameworks */,
 				FC50027C22C1F0AC0031F724 /* libHSReactNativeMedia.a in Frameworks */,
 				FC254DFF21CDB03800A9C901 /* libReactNativeNavigation.a in Frameworks */,
@@ -655,6 +658,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FCEDBA7222C585E7008FD805 /* CoreML.framework */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 			);
 			name = Frameworks;
