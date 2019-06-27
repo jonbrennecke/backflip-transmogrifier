@@ -8,6 +8,7 @@ import {
 } from '@jonbrennecke/react-native-media';
 
 import { Albums } from '../../constants';
+import { createTrainingPipeline, TrainingPipelineEffects } from '../../utils';
 
 import type { ComponentType } from 'react';
 import type { MediaStateHOCProps } from '@jonbrennecke/react-native-media';
@@ -39,7 +40,14 @@ export function wrapWithInitScreenState<
       if (!success) {
         Alert.alert('No images', 'No images could be found for training');
       }
-      
+      const assetIDs = this.props.albumAssets
+        .valueSeq()
+        .flatMap(a => a.assetIDs)
+        .toArray();
+      await createTrainingPipeline({
+        assetIDs,
+        effects: [TrainingPipelineEffects.faceAwareDepthFilter],
+      });
     }
 
     async loadImagesForProcessing(): Promise<boolean> {

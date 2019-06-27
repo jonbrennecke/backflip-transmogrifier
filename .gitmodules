@@ -1,0 +1,3 @@
+[submodule "ios/PromiseKit"]
+	path = ios/PromiseKit
+	url = https://github.com/mxcl/PromiseKit

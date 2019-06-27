@@ -46,6 +46,18 @@
 		FC6EA7D621CEA44D007C3B3E /* PassionOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC6EA7AC21CEA44D007C3B3E /* PassionOne-Regular.ttf */; };
 		FC6EA7D721CEA44D007C3B3E /* PT_Sans-Web-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC6EA7D421CEA44D007C3B3E /* PT_Sans-Web-Bold.ttf */; };
 		FC6EA7D821CEA44D007C3B3E /* PT_Sans-Web-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC6EA7D521CEA44D007C3B3E /* PT_Sans-Web-Regular.ttf */; };
+		FCEDBA0D22C2A7AE008FD805 /* HSTrainingPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA0C22C2A7AE008FD805 /* HSTrainingPipeline.swift */; };
+		FCEDBA0F22C2AFA4008FD805 /* HSTrainingPipelineBridgeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA0E22C2AFA4008FD805 /* HSTrainingPipelineBridgeModule.m */; };
+		FCEDBA1222C2B16F008FD805 /* HSTrainingPipelineRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA1122C2B16F008FD805 /* HSTrainingPipelineRequest.swift */; };
+		FCEDBA2C22C2B951008FD805 /* HSAsyncImageDataIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA2B22C2B951008FD805 /* HSAsyncImageDataIterator.swift */; };
+		FCEDBA4222C2C203008FD805 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCEDBA3722C2C1FB008FD805 /* PromiseKit.framework */; };
+		FCEDBA4722C304C2008FD805 /* createCGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA4622C304C2008FD805 /* createCGImage.swift */; };
+		FCEDBA4922C304DB008FD805 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA4822C304DB008FD805 /* Size.swift */; };
+		FCEDBA4B22C304E8008FD805 /* Index2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA4A22C304E8008FD805 /* Index2D.swift */; };
+		FCEDBA6522C31D18008FD805 /* HSPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA6422C31D18008FD805 /* HSPixelBuffer.swift */; };
+		FCEDBA6722C31D3F008FD805 /* pixelBufferUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA6622C31D3F008FD805 /* pixelBufferUtils.swift */; };
+		FCEDBA6922C4302B008FD805 /* depthUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA6822C4302B008FD805 /* depthUtils.swift */; };
+		FCEDBA6B22C458CB008FD805 /* HSImageBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA6A22C458CB008FD805 /* HSImageBuffer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -357,6 +369,48 @@
 			remoteGlobalIDString = 7B49FEBB1E95090800DEB3EA;
 			remoteInfo = ReactNativeNavigationTests;
 		};
+		FCEDBA3622C2C1FB008FD805 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCEDBA2D22C2C1FB008FD805 /* PromiseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 63B0AC571D595E1B00FA21D9;
+			remoteInfo = PromiseKit;
+		};
+		FCEDBA3822C2C1FB008FD805 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCEDBA2D22C2C1FB008FD805 /* PromiseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 631751A81D59766500A9DDDC;
+			remoteInfo = "PMKA+Tests";
+		};
+		FCEDBA3A22C2C1FB008FD805 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCEDBA2D22C2C1FB008FD805 /* PromiseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6314113C1D59795700E24B9E;
+			remoteInfo = PMKBridgeTests;
+		};
+		FCEDBA3C22C2C1FB008FD805 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCEDBA2D22C2C1FB008FD805 /* PromiseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 630019221D596292003B4E30;
+			remoteInfo = PMKCoreTests;
+		};
+		FCEDBA3E22C2C1FB008FD805 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCEDBA2D22C2C1FB008FD805 /* PromiseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 633027EA203CC0060037E136;
+			remoteInfo = PMKDeprecatedTests;
+		};
+		FCEDBA4022C2C1FB008FD805 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCEDBA2D22C2C1FB008FD805 /* PromiseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C0244E622047A6CB00ACB4AC;
+			remoteInfo = "PMKJSA+Tests";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -398,6 +452,19 @@
 		FC6EA7AC21CEA44D007C3B3E /* PassionOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "PassionOne-Regular.ttf"; path = "../assets/fonts/PassionOne-Regular.ttf"; sourceTree = "<group>"; };
 		FC6EA7D421CEA44D007C3B3E /* PT_Sans-Web-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "PT_Sans-Web-Bold.ttf"; path = "../assets/fonts/PT_Sans-Web-Bold.ttf"; sourceTree = "<group>"; };
 		FC6EA7D521CEA44D007C3B3E /* PT_Sans-Web-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "PT_Sans-Web-Regular.ttf"; path = "../assets/fonts/PT_Sans-Web-Regular.ttf"; sourceTree = "<group>"; };
+		FCEDBA0C22C2A7AE008FD805 /* HSTrainingPipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSTrainingPipeline.swift; sourceTree = "<group>"; };
+		FCEDBA0E22C2AFA4008FD805 /* HSTrainingPipelineBridgeModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSTrainingPipelineBridgeModule.m; sourceTree = "<group>"; };
+		FCEDBA1022C2AFAB008FD805 /* HSTrainingPipelineBridgeModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSTrainingPipelineBridgeModule.h; sourceTree = "<group>"; };
+		FCEDBA1122C2B16F008FD805 /* HSTrainingPipelineRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSTrainingPipelineRequest.swift; sourceTree = "<group>"; };
+		FCEDBA2B22C2B951008FD805 /* HSAsyncImageDataIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSAsyncImageDataIterator.swift; sourceTree = "<group>"; };
+		FCEDBA2D22C2C1FB008FD805 /* PromiseKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PromiseKit.xcodeproj; path = PromiseKit/PromiseKit.xcodeproj; sourceTree = "<group>"; };
+		FCEDBA4622C304C2008FD805 /* createCGImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createCGImage.swift; sourceTree = "<group>"; };
+		FCEDBA4822C304DB008FD805 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		FCEDBA4A22C304E8008FD805 /* Index2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Index2D.swift; sourceTree = "<group>"; };
+		FCEDBA6422C31D18008FD805 /* HSPixelBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSPixelBuffer.swift; sourceTree = "<group>"; };
+		FCEDBA6622C31D3F008FD805 /* pixelBufferUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pixelBufferUtils.swift; sourceTree = "<group>"; };
+		FCEDBA6822C4302B008FD805 /* depthUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = depthUtils.swift; sourceTree = "<group>"; };
+		FCEDBA6A22C458CB008FD805 /* HSImageBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSImageBuffer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -413,6 +480,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCEDBA4222C2C203008FD805 /* PromiseKit.framework in Frameworks */,
 				FC50027C22C1F0AC0031F724 /* libHSReactNativeMedia.a in Frameworks */,
 				FC254DFF21CDB03800A9C901 /* libReactNativeNavigation.a in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
@@ -540,6 +608,7 @@
 		13B07FAE1A68108700A75B9A /* BackflipTransmogrifier */ = {
 			isa = PBXGroup;
 			children = (
+				FCEDB9E022C2A728008FD805 /* Source */,
 				FC6EA7D921CEA457007C3B3E /* fonts */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -606,6 +675,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				FCEDBA2D22C2C1FB008FD805 /* PromiseKit.xcodeproj */,
 				FC50024D22C1F0970031F724 /* HSReactNativeMedia.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
@@ -714,6 +784,54 @@
 				FC983DD721CDAF6800063476 /* ReactNativeNavigationTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		FCEDB9E022C2A728008FD805 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				FCEDBA4322C2C762008FD805 /* utils */,
+				FCEDBA0B22C2A761008FD805 /* modules */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		FCEDBA0B22C2A761008FD805 /* modules */ = {
+			isa = PBXGroup;
+			children = (
+				FCEDBA0C22C2A7AE008FD805 /* HSTrainingPipeline.swift */,
+				FCEDBA0E22C2AFA4008FD805 /* HSTrainingPipelineBridgeModule.m */,
+				FCEDBA1022C2AFAB008FD805 /* HSTrainingPipelineBridgeModule.h */,
+				FCEDBA1122C2B16F008FD805 /* HSTrainingPipelineRequest.swift */,
+			);
+			name = modules;
+			sourceTree = "<group>";
+		};
+		FCEDBA2E22C2C1FB008FD805 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FCEDBA3722C2C1FB008FD805 /* PromiseKit.framework */,
+				FCEDBA3922C2C1FB008FD805 /* PMKA+Tests.xctest */,
+				FCEDBA3B22C2C1FB008FD805 /* PMKBridgeTests.xctest */,
+				FCEDBA3D22C2C1FB008FD805 /* PMKCoreTests.xctest */,
+				FCEDBA3F22C2C1FB008FD805 /* PMKDeprecatedTests.xctest */,
+				FCEDBA4122C2C1FB008FD805 /* PMKJSA+Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FCEDBA4322C2C762008FD805 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				FCEDBA2B22C2B951008FD805 /* HSAsyncImageDataIterator.swift */,
+				FCEDBA4622C304C2008FD805 /* createCGImage.swift */,
+				FCEDBA4822C304DB008FD805 /* Size.swift */,
+				FCEDBA4A22C304E8008FD805 /* Index2D.swift */,
+				FCEDBA6622C31D3F008FD805 /* pixelBufferUtils.swift */,
+				FCEDBA6822C4302B008FD805 /* depthUtils.swift */,
+				FCEDBA6422C31D18008FD805 /* HSPixelBuffer.swift */,
+				FCEDBA6A22C458CB008FD805 /* HSImageBuffer.swift */,
+			);
+			name = utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -835,6 +953,10 @@
 				{
 					ProductGroup = FC50024E22C1F0970031F724 /* Products */;
 					ProjectRef = FC50024D22C1F0970031F724 /* HSReactNativeMedia.xcodeproj */;
+				},
+				{
+					ProductGroup = FCEDBA2E22C2C1FB008FD805 /* Products */;
+					ProjectRef = FCEDBA2D22C2C1FB008FD805 /* PromiseKit.xcodeproj */;
 				},
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
@@ -1198,6 +1320,48 @@
 			remoteRef = FC983DD621CDAF6800063476 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		FCEDBA3722C2C1FB008FD805 /* PromiseKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PromiseKit.framework;
+			remoteRef = FCEDBA3622C2C1FB008FD805 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FCEDBA3922C2C1FB008FD805 /* PMKA+Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "PMKA+Tests.xctest";
+			remoteRef = FCEDBA3822C2C1FB008FD805 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FCEDBA3B22C2C1FB008FD805 /* PMKBridgeTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PMKBridgeTests.xctest;
+			remoteRef = FCEDBA3A22C2C1FB008FD805 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FCEDBA3D22C2C1FB008FD805 /* PMKCoreTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PMKCoreTests.xctest;
+			remoteRef = FCEDBA3C22C2C1FB008FD805 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FCEDBA3F22C2C1FB008FD805 /* PMKDeprecatedTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PMKDeprecatedTests.xctest;
+			remoteRef = FCEDBA3E22C2C1FB008FD805 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FCEDBA4122C2C1FB008FD805 /* PMKJSA+Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "PMKJSA+Tests.xctest";
+			remoteRef = FCEDBA4022C2C1FB008FD805 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -1281,9 +1445,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCEDBA1222C2B16F008FD805 /* HSTrainingPipelineRequest.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				FCEDBA0D22C2A7AE008FD805 /* HSTrainingPipeline.swift in Sources */,
+				FCEDBA6B22C458CB008FD805 /* HSImageBuffer.swift in Sources */,
+				FCEDBA4B22C304E8008FD805 /* Index2D.swift in Sources */,
+				FCEDBA6522C31D18008FD805 /* HSPixelBuffer.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				FCEDBA6922C4302B008FD805 /* depthUtils.swift in Sources */,
+				FCEDBA0F22C2AFA4008FD805 /* HSTrainingPipelineBridgeModule.m in Sources */,
+				FCEDBA4922C304DB008FD805 /* Size.swift in Sources */,
+				FCEDBA4722C304C2008FD805 /* createCGImage.swift in Sources */,
+				FCEDBA6722C31D3F008FD805 /* pixelBufferUtils.swift in Sources */,
 				FC50027F22C1F0E10031F724 /* Empty.swift in Sources */,
+				FCEDBA2C22C2B951008FD805 /* HSAsyncImageDataIterator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
