@@ -21,30 +21,41 @@ class HSTrainingPipeline: NSObject {
     try images.forEach { promise in
       let data = try promise.wait()
       
-      guard let image = HSImageData(data: data) else {
+      guard let imageData = HSAuxiliaryImageData(data: data) else {
         return
       }
       
-      let buffer = image.depthBuffer
+      let buffer = HSPixelBuffer<UInt8>(pixelBuffer: imageData.segmentationMatte.mattingImage)
+      let imageBuffer = HSImageBuffer(pixelBuffer: buffer)
       
-//      guard let faceRect = image.faceRectangle else {
+//      if let image = CIImage(portaitEffectsMatte: imageData.segmentationMatte) {
+//        let debugImage = UIImage(ciImage: image)
+//        try PHPhotoLibrary.shared().performChangesAndWait {
+//          PHAssetChangeRequest.creationRequestForAsset(from: debugImage)
+//          UIImageWriteToSavedPhotosAlbum(debugImage, nil, nil, nil)
+//        }
+//      }
+      
+//      let buffer = imageData.depthBuffer
+      
+//      guard let faceRect = imageData.faceRectangle else {
 //        return
 //      }
 //      let rect = image.toDepthCoords(from: faceRect)
 //      let facePixels = buffer.getPixels(in: rect)
 //      let averageOfFace = facePixels.reduce(0, +) / Float(facePixels.count)
       
-      var depthPixels: [Float32] = buffer.getPixels()
-      
-      guard let outputBuffer = createBuffer(
-        with: &depthPixels,
-        size: buffer.size,
-        bufferType: .depthFloat32
-      ) else {
-        return
-      }
-
-      let imageBuffer = HSImageBuffer(pixelBuffer: HSPixelBuffer<Float32>(pixelBuffer: outputBuffer))
+//      var depthPixels: [Float32] = buffer.getPixels()
+//
+//      guard let outputBuffer = createBuffer(
+//        with: &depthPixels,
+//        size: buffer.size,
+//        bufferType: .depthFloat32
+//      ) else {
+//        return
+//      }
+//
+//      let imageBuffer = HSImageBuffer(pixelBuffer: HSPixelBuffer<Float32>(pixelBuffer: outputBuffer))
       guard let outputCGImage = imageBuffer.makeImage() else {
         return
       }

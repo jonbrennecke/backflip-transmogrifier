@@ -36,14 +36,3 @@ internal func createCGImage<T>(
     )
   }
 }
-
-internal func createImage(with data: Data) -> CGImage? {
-  guard
-    let imageSource = CGImageSourceCreateWithData(data as CFData, nil),
-    case .statusComplete = CGImageSourceGetStatus(imageSource),
-    CGImageSourceGetCount(imageSource) > 0
-    else {
-      return nil
-  }
-  return CGImageSourceCreateImageAtIndex(imageSource, 0, nil)
-}
