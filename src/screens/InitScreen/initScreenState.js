@@ -48,6 +48,7 @@ export function wrapWithInitScreenState<
         assetIDs,
         effects: [TrainingPipelineEffects.faceAwareDepthFilter],
       });
+      Alert.alert('Complete', 'finished processing');
     }
 
     async loadImagesForProcessing(): Promise<boolean> {
