@@ -22,7 +22,6 @@ internal func clamp<T: SignedInteger>(_ x: T, min xMin: T, max xMax: T) -> T {
   return max(min(x, xMax), xMin)
 }
 
-
 internal func translate(_ point: Point2D<Int>, from fromSize: Size<Int>, to toSize: Size<Int>) -> Point2D<Int> {
   let widthRatio = Float(toSize.width) / Float(fromSize.width)
   let heightRatio = Float(toSize.height) / Float(fromSize.height)

@@ -46,12 +46,12 @@
 		FC6EA7D621CEA44D007C3B3E /* PassionOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC6EA7AC21CEA44D007C3B3E /* PassionOne-Regular.ttf */; };
 		FC6EA7D721CEA44D007C3B3E /* PT_Sans-Web-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC6EA7D421CEA44D007C3B3E /* PT_Sans-Web-Bold.ttf */; };
 		FC6EA7D821CEA44D007C3B3E /* PT_Sans-Web-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC6EA7D521CEA44D007C3B3E /* PT_Sans-Web-Regular.ttf */; };
+		FC8E5C7A22C5B37600F174FA /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3679AB22C5B25800CF9675 /* PromiseKit.framework */; };
+		FC8E5C7B22C5B37600F174FA /* PromiseKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC3679AB22C5B25800CF9675 /* PromiseKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FCEDBA0D22C2A7AE008FD805 /* HSTrainingPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA0C22C2A7AE008FD805 /* HSTrainingPipeline.swift */; };
 		FCEDBA0F22C2AFA4008FD805 /* HSTrainingPipelineBridgeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA0E22C2AFA4008FD805 /* HSTrainingPipelineBridgeModule.m */; };
 		FCEDBA1222C2B16F008FD805 /* HSTrainingPipelineRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA1122C2B16F008FD805 /* HSTrainingPipelineRequest.swift */; };
 		FCEDBA2C22C2B951008FD805 /* HSAsyncImageDataIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA2B22C2B951008FD805 /* HSAsyncImageDataIterator.swift */; };
-		FCEDBA4222C2C203008FD805 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCEDBA3722C2C1FB008FD805 /* PromiseKit.framework */; };
-		FCEDBA4722C304C2008FD805 /* createCGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA4622C304C2008FD805 /* createCGImage.swift */; };
 		FCEDBA4922C304DB008FD805 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA4822C304DB008FD805 /* Size.swift */; };
 		FCEDBA4B22C304E8008FD805 /* Point2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA4A22C304E8008FD805 /* Point2D.swift */; };
 		FCEDBA6522C31D18008FD805 /* HSPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA6422C31D18008FD805 /* HSPixelBuffer.swift */; };
@@ -61,7 +61,6 @@
 		FCEDBA6D22C49A4A008FD805 /* mathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA6C22C49A4A008FD805 /* mathUtils.swift */; };
 		FCEDBA6F22C52C20008FD805 /* HSAuxiliaryImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA6E22C52C20008FD805 /* HSAuxiliaryImageData.swift */; };
 		FCEDBA7122C53D83008FD805 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEDBA7022C53D83008FD805 /* Rectangle.swift */; };
-		FCEDBA7322C585E7008FD805 /* CoreML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCEDBA7222C585E7008FD805 /* CoreML.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -338,6 +337,48 @@
 			remoteGlobalIDString = 358F4ED71D1E81A9004DF814;
 			remoteInfo = RCTBlob;
 		};
+		FC3679AA22C5B25800CF9675 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC3679A122C5B25800CF9675 /* PromiseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 63B0AC571D595E1B00FA21D9;
+			remoteInfo = PromiseKit;
+		};
+		FC3679AC22C5B25800CF9675 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC3679A122C5B25800CF9675 /* PromiseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 631751A81D59766500A9DDDC;
+			remoteInfo = "PMKA+Tests";
+		};
+		FC3679AE22C5B25800CF9675 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC3679A122C5B25800CF9675 /* PromiseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6314113C1D59795700E24B9E;
+			remoteInfo = PMKBridgeTests;
+		};
+		FC3679B022C5B25800CF9675 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC3679A122C5B25800CF9675 /* PromiseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 630019221D596292003B4E30;
+			remoteInfo = PMKCoreTests;
+		};
+		FC3679B222C5B25800CF9675 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC3679A122C5B25800CF9675 /* PromiseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 633027EA203CC0060037E136;
+			remoteInfo = PMKDeprecatedTests;
+		};
+		FC3679B422C5B25800CF9675 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC3679A122C5B25800CF9675 /* PromiseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C0244E622047A6CB00ACB4AC;
+			remoteInfo = "PMKJSA+Tests";
+		};
 		FC50025122C1F0970031F724 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FC50024D22C1F0970031F724 /* HSReactNativeMedia.xcodeproj */;
@@ -359,6 +400,13 @@
 			remoteGlobalIDString = 3DF7F6AC203AA09B00D0EAB7;
 			remoteInfo = "ReactNativeConfig-tvOS";
 		};
+		FC8E5C7C22C5B37600F174FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC3679A122C5B25800CF9675 /* PromiseKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 63B0AC561D595E1B00FA21D9;
+			remoteInfo = PromiseKit;
+		};
 		FC983DD421CDAF6800063476 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D1A322132CEB40238AD3A6FC /* ReactNativeNavigation.xcodeproj */;
@@ -373,49 +421,21 @@
 			remoteGlobalIDString = 7B49FEBB1E95090800DEB3EA;
 			remoteInfo = ReactNativeNavigationTests;
 		};
-		FCEDBA3622C2C1FB008FD805 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FCEDBA2D22C2C1FB008FD805 /* PromiseKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 63B0AC571D595E1B00FA21D9;
-			remoteInfo = PromiseKit;
-		};
-		FCEDBA3822C2C1FB008FD805 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FCEDBA2D22C2C1FB008FD805 /* PromiseKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 631751A81D59766500A9DDDC;
-			remoteInfo = "PMKA+Tests";
-		};
-		FCEDBA3A22C2C1FB008FD805 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FCEDBA2D22C2C1FB008FD805 /* PromiseKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6314113C1D59795700E24B9E;
-			remoteInfo = PMKBridgeTests;
-		};
-		FCEDBA3C22C2C1FB008FD805 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FCEDBA2D22C2C1FB008FD805 /* PromiseKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 630019221D596292003B4E30;
-			remoteInfo = PMKCoreTests;
-		};
-		FCEDBA3E22C2C1FB008FD805 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FCEDBA2D22C2C1FB008FD805 /* PromiseKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 633027EA203CC0060037E136;
-			remoteInfo = PMKDeprecatedTests;
-		};
-		FCEDBA4022C2C1FB008FD805 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FCEDBA2D22C2C1FB008FD805 /* PromiseKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C0244E622047A6CB00ACB4AC;
-			remoteInfo = "PMKJSA+Tests";
-		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FC8E5C7E22C5B37600F174FA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FC8E5C7B22C5B37600F174FA /* PromiseKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
@@ -450,6 +470,7 @@
 		C58E7DD208D94D92847F0B1B /* libReactNativeConfig-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libReactNativeConfig-tvOS.a"; sourceTree = "<group>"; };
 		D1A322132CEB40238AD3A6FC /* ReactNativeNavigation.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeNavigation.xcodeproj; path = "../node_modules/react-native-navigation/lib/ios/ReactNativeNavigation.xcodeproj"; sourceTree = "<group>"; };
 		EDF9D805004747F996337EDF /* ReactNativeConfig.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeConfig.xcodeproj; path = "../node_modules/react-native-config/ios/ReactNativeConfig.xcodeproj"; sourceTree = "<group>"; };
+		FC3679A122C5B25800CF9675 /* PromiseKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PromiseKit.xcodeproj; path = PromiseKit/PromiseKit.xcodeproj; sourceTree = "<group>"; };
 		FC50024D22C1F0970031F724 /* HSReactNativeMedia.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HSReactNativeMedia.xcodeproj; path = "../node_modules/@jonbrennecke/react-native-media/ios/HSReactNativeMedia.xcodeproj"; sourceTree = "<group>"; };
 		FC50027D22C1F0E00031F724 /* BackflipTransmogrifier-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BackflipTransmogrifier-Bridging-Header.h"; sourceTree = "<group>"; };
 		FC50027E22C1F0E10031F724 /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
@@ -461,8 +482,6 @@
 		FCEDBA1022C2AFAB008FD805 /* HSTrainingPipelineBridgeModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSTrainingPipelineBridgeModule.h; sourceTree = "<group>"; };
 		FCEDBA1122C2B16F008FD805 /* HSTrainingPipelineRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSTrainingPipelineRequest.swift; sourceTree = "<group>"; };
 		FCEDBA2B22C2B951008FD805 /* HSAsyncImageDataIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSAsyncImageDataIterator.swift; sourceTree = "<group>"; };
-		FCEDBA2D22C2C1FB008FD805 /* PromiseKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PromiseKit.xcodeproj; path = PromiseKit/PromiseKit.xcodeproj; sourceTree = "<group>"; };
-		FCEDBA4622C304C2008FD805 /* createCGImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createCGImage.swift; sourceTree = "<group>"; };
 		FCEDBA4822C304DB008FD805 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		FCEDBA4A22C304E8008FD805 /* Point2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point2D.swift; sourceTree = "<group>"; };
 		FCEDBA6422C31D18008FD805 /* HSPixelBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSPixelBuffer.swift; sourceTree = "<group>"; };
@@ -472,7 +491,6 @@
 		FCEDBA6C22C49A4A008FD805 /* mathUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mathUtils.swift; sourceTree = "<group>"; };
 		FCEDBA6E22C52C20008FD805 /* HSAuxiliaryImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSAuxiliaryImageData.swift; sourceTree = "<group>"; };
 		FCEDBA7022C53D83008FD805 /* Rectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
-		FCEDBA7222C585E7008FD805 /* CoreML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreML.framework; path = System/Library/Frameworks/CoreML.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -488,8 +506,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCEDBA7322C585E7008FD805 /* CoreML.framework in Frameworks */,
-				FCEDBA4222C2C203008FD805 /* PromiseKit.framework in Frameworks */,
 				FC50027C22C1F0AC0031F724 /* libHSReactNativeMedia.a in Frameworks */,
 				FC254DFF21CDB03800A9C901 /* libReactNativeNavigation.a in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
@@ -497,6 +513,7 @@
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
+				FC8E5C7A22C5B37600F174FA /* PromiseKit.framework in Frameworks */,
 				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
 				133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */,
 				00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */,
@@ -658,7 +675,6 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FCEDBA7222C585E7008FD805 /* CoreML.framework */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 			);
 			name = Frameworks;
@@ -685,7 +701,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				FCEDBA2D22C2C1FB008FD805 /* PromiseKit.xcodeproj */,
+				FC3679A122C5B25800CF9675 /* PromiseKit.xcodeproj */,
 				FC50024D22C1F0970031F724 /* HSReactNativeMedia.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
@@ -745,6 +761,19 @@
 			children = (
 				ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */,
 				2D16E6721FA4F8DC00B85C8A /* libRCTBlob-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FC3679A222C5B25800CF9675 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC3679AB22C5B25800CF9675 /* PromiseKit.framework */,
+				FC3679AD22C5B25800CF9675 /* PMKA+Tests.xctest */,
+				FC3679AF22C5B25800CF9675 /* PMKBridgeTests.xctest */,
+				FC3679B122C5B25800CF9675 /* PMKCoreTests.xctest */,
+				FC3679B322C5B25800CF9675 /* PMKDeprecatedTests.xctest */,
+				FC3679B522C5B25800CF9675 /* PMKJSA+Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -816,24 +845,10 @@
 			name = modules;
 			sourceTree = "<group>";
 		};
-		FCEDBA2E22C2C1FB008FD805 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FCEDBA3722C2C1FB008FD805 /* PromiseKit.framework */,
-				FCEDBA3922C2C1FB008FD805 /* PMKA+Tests.xctest */,
-				FCEDBA3B22C2C1FB008FD805 /* PMKBridgeTests.xctest */,
-				FCEDBA3D22C2C1FB008FD805 /* PMKCoreTests.xctest */,
-				FCEDBA3F22C2C1FB008FD805 /* PMKDeprecatedTests.xctest */,
-				FCEDBA4122C2C1FB008FD805 /* PMKJSA+Tests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		FCEDBA4322C2C762008FD805 /* utils */ = {
 			isa = PBXGroup;
 			children = (
 				FCEDBA2B22C2B951008FD805 /* HSAsyncImageDataIterator.swift */,
-				FCEDBA4622C304C2008FD805 /* createCGImage.swift */,
 				FCEDBA4822C304DB008FD805 /* Size.swift */,
 				FCEDBA7022C53D83008FD805 /* Rectangle.swift */,
 				FCEDBA4A22C304E8008FD805 /* Point2D.swift */,
@@ -876,10 +891,12 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				FC8E5C7E22C5B37600F174FA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FC8E5C7D22C5B37600F174FA /* PBXTargetDependency */,
 			);
 			name = BackflipTransmogrifier;
 			productName = "Hello World";
@@ -968,8 +985,8 @@
 					ProjectRef = FC50024D22C1F0970031F724 /* HSReactNativeMedia.xcodeproj */;
 				},
 				{
-					ProductGroup = FCEDBA2E22C2C1FB008FD805 /* Products */;
-					ProjectRef = FCEDBA2D22C2C1FB008FD805 /* PromiseKit.xcodeproj */;
+					ProductGroup = FC3679A222C5B25800CF9675 /* Products */;
+					ProjectRef = FC3679A122C5B25800CF9675 /* PromiseKit.xcodeproj */;
 				},
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
@@ -1298,6 +1315,48 @@
 			remoteRef = ADBDB9261DFEBF0700ED6528 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		FC3679AB22C5B25800CF9675 /* PromiseKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PromiseKit.framework;
+			remoteRef = FC3679AA22C5B25800CF9675 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC3679AD22C5B25800CF9675 /* PMKA+Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "PMKA+Tests.xctest";
+			remoteRef = FC3679AC22C5B25800CF9675 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC3679AF22C5B25800CF9675 /* PMKBridgeTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PMKBridgeTests.xctest;
+			remoteRef = FC3679AE22C5B25800CF9675 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC3679B122C5B25800CF9675 /* PMKCoreTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PMKCoreTests.xctest;
+			remoteRef = FC3679B022C5B25800CF9675 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC3679B322C5B25800CF9675 /* PMKDeprecatedTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PMKDeprecatedTests.xctest;
+			remoteRef = FC3679B222C5B25800CF9675 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC3679B522C5B25800CF9675 /* PMKJSA+Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "PMKJSA+Tests.xctest";
+			remoteRef = FC3679B422C5B25800CF9675 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		FC50025222C1F0970031F724 /* libHSReactNativeMedia.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1331,48 +1390,6 @@
 			fileType = wrapper.cfbundle;
 			path = ReactNativeNavigationTests.xctest;
 			remoteRef = FC983DD621CDAF6800063476 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		FCEDBA3722C2C1FB008FD805 /* PromiseKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = PromiseKit.framework;
-			remoteRef = FCEDBA3622C2C1FB008FD805 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		FCEDBA3922C2C1FB008FD805 /* PMKA+Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "PMKA+Tests.xctest";
-			remoteRef = FCEDBA3822C2C1FB008FD805 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		FCEDBA3B22C2C1FB008FD805 /* PMKBridgeTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = PMKBridgeTests.xctest;
-			remoteRef = FCEDBA3A22C2C1FB008FD805 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		FCEDBA3D22C2C1FB008FD805 /* PMKCoreTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = PMKCoreTests.xctest;
-			remoteRef = FCEDBA3C22C2C1FB008FD805 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		FCEDBA3F22C2C1FB008FD805 /* PMKDeprecatedTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = PMKDeprecatedTests.xctest;
-			remoteRef = FCEDBA3E22C2C1FB008FD805 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		FCEDBA4122C2C1FB008FD805 /* PMKJSA+Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "PMKJSA+Tests.xctest";
-			remoteRef = FCEDBA4022C2C1FB008FD805 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1470,7 +1487,6 @@
 				FCEDBA0F22C2AFA4008FD805 /* HSTrainingPipelineBridgeModule.m in Sources */,
 				FCEDBA7122C53D83008FD805 /* Rectangle.swift in Sources */,
 				FCEDBA4922C304DB008FD805 /* Size.swift in Sources */,
-				FCEDBA4722C304C2008FD805 /* createCGImage.swift in Sources */,
 				FCEDBA6722C31D3F008FD805 /* pixelBufferUtils.swift in Sources */,
 				FCEDBA6D22C49A4A008FD805 /* mathUtils.swift in Sources */,
 				FC50027F22C1F0E10031F724 /* Empty.swift in Sources */,
@@ -1507,6 +1523,11 @@
 			isa = PBXTargetDependency;
 			target = 2D02E47A1E0B4A5D006451C7 /* BackflipTransmogrifier-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
+		};
+		FC8E5C7D22C5B37600F174FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PromiseKit;
+			targetProxy = FC8E5C7C22C5B37600F174FA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1595,6 +1616,7 @@
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1625,6 +1647,7 @@
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;

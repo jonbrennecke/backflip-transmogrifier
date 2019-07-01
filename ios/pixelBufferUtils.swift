@@ -41,12 +41,11 @@ internal func createBuffer(with image: UIImage) -> CVPixelBuffer? {
   return pixelBuffer
 }
 
-
 enum BufferType {
   case depthFloat32
   case argbFloat32
   case grayScaleUInt8
-  
+
   public var pixelFormat: OSType {
     switch self {
     case .depthFloat32:
@@ -57,7 +56,7 @@ enum BufferType {
       return kCVPixelFormatType_OneComponent8
     }
   }
-  
+
   public var bytesPerPixel: Int {
     switch self {
     case .depthFloat32:
@@ -75,7 +74,7 @@ internal func createBuffer<T>(
 ) -> CVPixelBuffer? {
   let attrs = [
     kCVPixelBufferCGImageCompatibilityKey: kCFBooleanTrue,
-    kCVPixelBufferCGBitmapContextCompatibilityKey: kCFBooleanTrue
+    kCVPixelBufferCGBitmapContextCompatibilityKey: kCFBooleanTrue,
   ] as CFDictionary
   var buffer: CVPixelBuffer!
   let releaseCallback: CVPixelBufferReleaseBytesCallback? = {

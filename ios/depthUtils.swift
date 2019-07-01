@@ -27,8 +27,7 @@ internal func createSegmentationMatte(with imageSource: CGImageSource) -> AVPort
     let info = CGImageSourceCopyAuxiliaryDataInfoAtIndex(
       imageSource, 0, kCGImageAuxiliaryDataTypePortraitEffectsMatte
     ) as? [AnyHashable: Any],
-    let matte = try? AVPortraitEffectsMatte(fromDictionaryRepresentation: info)
-  {
+    let matte = try? AVPortraitEffectsMatte(fromDictionaryRepresentation: info) {
     return matte
   }
   return nil
@@ -43,8 +42,8 @@ internal func createImageSource(with data: Data) -> CGImageSource? {
     let imageSource = CGImageSourceCreateWithData(data as CFData, nil),
     case .statusComplete = CGImageSourceGetStatus(imageSource),
     CGImageSourceGetCount(imageSource) > 0
-    else {
-      return nil
+  else {
+    return nil
   }
   return imageSource
 }

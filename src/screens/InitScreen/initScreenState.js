@@ -48,7 +48,7 @@ export function wrapWithInitScreenState<
         assetIDs,
         effects: [TrainingPipelineEffects.faceAwareDepthFilter],
       });
-      Alert.alert('Complete', 'finished processing');
+      Alert.alert('Done', 'images were successfully transmogrified');
     }
 
     async loadImagesForProcessing(): Promise<boolean> {

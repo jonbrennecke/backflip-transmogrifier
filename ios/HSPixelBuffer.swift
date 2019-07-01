@@ -2,7 +2,7 @@ import AVFoundation
 
 struct HSPixelBuffer<T: Numeric> {
   internal typealias PixelValueType = T
-  
+
   private let buffer: CVPixelBuffer
 
   public let size: Size<Int>
@@ -11,7 +11,13 @@ struct HSPixelBuffer<T: Numeric> {
     self.buffer = buffer
     size = pixelSizeOf(buffer: buffer)
   }
-  
+
+  public var bytesPerRow: Int {
+    return withLockedBaseAddress(buffer) { buffer in
+      CVPixelBufferGetBytesPerRow(buffer)
+    }
+  }
+
   public func forEachPixel(in rect: Rectangle<Int>, _ callback: (T, Int, Point2D<Int>) -> Void) {
     return withLockedBaseAddress(buffer) { buffer in
       let bytesPerRow = CVPixelBufferGetBytesPerRow(buffer) / MemoryLayout<T>.size
@@ -23,7 +29,7 @@ struct HSPixelBuffer<T: Numeric> {
       }
     }
   }
-  
+
   public func forEachPixel(in size: Size<Int>, _ callback: (T, Int, Point2D<Int>) -> Void) {
     return forEachPixel(in: Rectangle(origin: .zero(), size: size), callback)
   }
@@ -40,7 +46,7 @@ struct HSPixelBuffer<T: Numeric> {
     }
     return ret
   }
-  
+
   public func getBytes() -> [UInt8] {
     let length = size.width * size.height * MemoryLayout<T>.size
     var ret = [UInt8](repeating: 0, count: length)
@@ -51,11 +57,11 @@ struct HSPixelBuffer<T: Numeric> {
     }
     return ret
   }
-  
+
   public func getPixels() -> [T] {
-    return mapPixels() { px, _ in px }
+    return mapPixels { px, _ in px }
   }
-  
+
   public func getPixels(in rect: Rectangle<Int>) -> [T] {
     let length = rect.width * rect.height
     var ret = [T](repeating: 0, count: length)
