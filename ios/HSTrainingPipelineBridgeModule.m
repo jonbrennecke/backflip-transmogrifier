@@ -18,16 +18,24 @@ RCT_EXPORT_METHOD(createPipeline
   if (!request) {
     id error = RCTMakeError(@"Invalid request sent to HSTrainingPipeline",
                             requestArgs, nil);
-    callback(@[ error, [NSNull null] ]);
+    callback(@[ error, @(NO) ]);
     return;
   }
   NSError *error;
-  [[HSTrainingPipeline sharedInstance] createPipeline:request error:&error];
-  if (error) {
-    callback(@[ error, [NSNull null] ]);
-    return;
-  }
-  callback(@[ [NSNull null], [NSNull null] ]);
+  [[HSTrainingPipeline sharedInstance]
+      runPipelineWithRequest:request
+                       error:&error
+           completionHandler:^(enum HSTrainingPileplineResult result) {
+             if (error) {
+               callback(@[ error, @(NO) ]);
+               return;
+             }
+             if (result != HSTrainingPileplineResultSuccess) {
+               callback(@[ [NSNull null], @(NO) ]);
+               return;
+             }
+             callback(@[ [NSNull null], @(YES) ]);
+           }];
 }
 
 @end

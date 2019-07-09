@@ -17,7 +17,9 @@ export type InitScreenExtraProps = {
   onRequestProcessImages: () => void,
 };
 
-export type InitScreenState = {};
+export type InitScreenState = {
+  isTraining: boolean
+};
 
 export function wrapWithInitScreenState<
   PassThroughProps: Object,
@@ -29,7 +31,9 @@ export function wrapWithInitScreenState<
     MediaStateHOCProps & PassThroughProps,
     InitScreenState
   > {
-    state = {};
+    state = {
+      isTraining: false,
+    };
 
     async componentDidMount() {
       await authorizeMediaLibrary();
@@ -44,9 +48,15 @@ export function wrapWithInitScreenState<
         .valueSeq()
         .flatMap(a => a.assetIDs)
         .toArray();
+      this.setState({
+        isTraining: true
+      });
       await createTrainingPipeline({
         assetIDs,
         effects: [TrainingPipelineEffects.faceAwareDepthFilter],
+      });
+      this.setState({
+        isTraining: false
       });
       Alert.alert('Done', 'images were successfully transmogrified');
     }
@@ -66,6 +76,7 @@ export function wrapWithInitScreenState<
       }
       await this.props.queryMedia({
         albumID: queueAlbum.albumID,
+        limit: Number.MAX_SAFE_INTEGER,
       });
       return true;
     }

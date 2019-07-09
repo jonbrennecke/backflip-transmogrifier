@@ -1,5 +1,6 @@
 import Photos
 import UIKit
+import HSCameraUtils
 
 @available(iOS 11.0, *)
 @objc
@@ -8,13 +9,19 @@ class HSTrainingPipeline: NSObject {
     case faceAwareDepthFilter
   }
 
+  @objc(HSTrainingPileplineResult)
+  public enum PipelineResult: Int {
+    case success
+    case failure
+  }
+
   @objc(sharedInstance)
   public static let shared = HSTrainingPipeline()
 
-  // TODO: calls promise.wait so this should be called on a background thread
-  @objc
-  public func createPipeline(_ request: HSTrainingPipelineRequest) throws {
+  @objc(runPipelineWithRequest:error:completionHandler:)
+  public func runPipeline(_ request: HSTrainingPipelineRequest, _ completionHandler: (PipelineResult) -> Void) throws {
     if request.assetIDs.count == 0 {
+      completionHandler(.failure)
       return
     }
 
@@ -49,24 +56,8 @@ class HSTrainingPipeline: NSObject {
       // save original image
       let image = UIImage(cgImage: imageData.image)
       try save(image: image, named: "color", in: folderURL)
-
-//      let buffer = imageData.depthBuffer
-//      guard let faceRect = imageData.faceRectangle else {
-//        return
-//      }
-//      let rect = image.toDepthCoords(from: faceRect)
-//      let facePixels = buffer.getPixels(in: rect)
-//      let averageOfFace = facePixels.reduce(0, +) / Float(facePixels.count)
-//      var depthPixels: [Float32] = buffer.getPixels()
-//      guard let outputBuffer = createBuffer(
-//        with: &depthPixels,
-//        size: buffer.size,
-//        bufferType: .depthFloat32
-//      ) else {
-//        return
-//      }
-//      let imageBuffer = HSImageBuffer(pixelBuffer: HSPixelBuffer<Float32>(pixelBuffer: outputBuffer))
     }
+    completionHandler(.success)
   }
 }
 

@@ -18,8 +18,9 @@ export const createTrainingPipeline = async ({
   assetIDs,
   effects,
 }: TrainingPipelineRequest) => {
-  await TrainingPipeline.createPipelineAsync({
+  const success = await TrainingPipeline.createPipelineAsync({
     assetIDs,
     effects,
   });
+  console.log('training pipeline success: ', success);
 };

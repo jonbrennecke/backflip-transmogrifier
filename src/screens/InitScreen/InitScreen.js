@@ -22,11 +22,12 @@ const styles = {
 };
 
 export const InitScreenComponent: SFC<InitScreenProps> = ({
+  isTraining,
   onRequestProcessImages,
 }: InitScreenProps) => (
   <SafeAreaView style={styles.flex}>
     <View style={styles.centerContent}>
-      <Button title="Process images" onPress={onRequestProcessImages} />
+      <Button title="Process images" onPress={onRequestProcessImages} disabled={isTraining} />
     </View>
   </SafeAreaView>
 );
